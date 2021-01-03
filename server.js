@@ -10,6 +10,7 @@ app.use(express.json());
 //routes
 
 app.use("/authentication", require("./routes/jwtAuth"));
+app.use("/admin", require("./routes/admin"));
 
 app.use("/dashboard", require("./routes/dashboard"));
 
