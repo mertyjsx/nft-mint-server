@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-
+const PORT = process.env.PORT || 3000;
 //middleware
 
 app.use(cors());
@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
 
 app.use("/mint_nft", require("./routes/nft"));
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
 
   console.log(`Server is starting on port 5000`);
 });
