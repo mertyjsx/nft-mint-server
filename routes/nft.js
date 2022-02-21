@@ -18,13 +18,13 @@ const description=(data)=>{
 router.post("/",  async (req, res) => {
   try {
     console.log("body",req.body)
-    const {url,receiver_id}=req.body
+    const {url,receiver_id,room_name}=req.body
   const mint_data={
     "account_id": "skrite16.testnet",
     "private_key": "33daQpMaMEVdBi6dVrAau7pcDt8y3jy9xCP7QsWTZDYyUReJq2ndQyBnEhHeBaNbPcUjAf56PEbc9iNcBHx9ra6c",
     "contract": "example-nft.testnet",
     "method": "nft_mint",
-    "params": {"token_id": `${Math.random()*10000000000}`, "receiver_id": receiver_id, "token_metadata": { "title": "room", "description": `${description(req.body)}`, "media": url, "copies": 1}},
+    "params": {"token_id": `${Math.random()*10000000000}`, "receiver_id": receiver_id, "token_metadata": { "title": `${room_name} **** ${description(req.body)}`, "description": `${description(req.body)}`, "media": url, "copies": 1}},
     "attached_gas": "100000000000000",
     "attached_tokens": "16490000000000000000000"
   }
